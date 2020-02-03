@@ -1,0 +1,66 @@
+﻿@model AppClient.Models.User
+
+@{
+    ViewBag.Title = "ویرایش اطلاعات کاربر";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+@ViewBag.msg
+<div class="Login">
+    <div class="box">
+
+        @using (Html.BeginForm("Edit_User", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+               @Html.HiddenFor(model => model.id)
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Address)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.RePassword)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.RePassword)
+                @Html.ValidationMessageFor(model => model.RePassword)
+            </div>
+
+
+
+            <p>
+                <input type="submit" value="ویرایش" />
+            </p>
+
+        }
+
+    </div>
+</div>
+

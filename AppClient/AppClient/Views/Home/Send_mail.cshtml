@@ -1,0 +1,48 @@
+﻿@model AppClient.Models.Mail
+
+@{
+    ViewBag.Title = "ارسال پیام";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Resiver)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Resiver)
+            @Html.ValidationMessageFor(model => model.Resiver)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Text)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Text)
+            @Html.ValidationMessageFor(model => model.Text)
+        </div>
+
+
+
+        <p>
+            <input type="submit" class="btn" value="ارسال" />
+        </p>
+    </fieldset>
+}

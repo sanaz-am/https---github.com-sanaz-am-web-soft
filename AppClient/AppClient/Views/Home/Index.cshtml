@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "ورود";
+
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="text-danger">
+    @ViewBag.message
+
+</div>
+<div class="Login">
+    <div class="box">
+        @using (Html.BeginForm("Index", "Home", new { ReturnUrl = Request["ReturnUrl"] }, FormMethod.Post))
+        {
+
+            @Html.Label("ایمیل")
+
+    <input type="text" name="username" />
+
+            @Html.Label("کلمه عبور")
+
+            @Html.TextBox("passwoerd", "", new { type = "password" })
+            <input class="submit" type="submit" value="ورود" />
+
+
+        }
+    </div>
+</div>
+

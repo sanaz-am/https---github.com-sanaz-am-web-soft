@@ -1,0 +1,42 @@
+﻿@model AppClient.Models.Mail
+
+@{
+    ViewBag.Title = "مشاهده پیام";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<fieldset>
+    <legend></legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Sender)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sender)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Resiver)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Resiver)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Text)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Text)
+    </div>
+
+
+
+</fieldset>
+
